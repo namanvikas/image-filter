@@ -1,4 +1,4 @@
-musthaj_x=1;
+musthaj_x=0;
 musthaj_y=0;
 
 function preload(){
@@ -17,6 +17,7 @@ function setup(){
 }
 function draw(){
 image(video,0,0,300,300);
+image(clown_image,musthaj_x,musthaj_y,30,30);
 }
 
 function modelloaded(){
@@ -26,8 +27,8 @@ function modelloaded(){
 function gotposes(results){
     if(results.length>0){
         console.log(results);
-        musthaj_x=results[0].pose.musthaj.x-12;
-        musthaj_y=results[0].pose.musthaj.y-12;
+        musthaj_x=results[0].pose.nose.x-12;
+        musthaj_y=results[0].pose.nose.y+10;
         console.log("nose x="+results[0].pose.nose.x);
         console.log("nose y="+results[0].pose.nose.y);
     }
